@@ -6,7 +6,7 @@ The demo should be self-explanatory with
 
 `python manipulate_demo.py`
 
-![python manipulate](1.png)
-![python manipulate](2.png)
+![python manipulate](./1.png)
+![python manipulate](./2.png)
 
 Tested with Python 2.7.2, Matplotlib 1.0.1
