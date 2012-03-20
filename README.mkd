@@ -2,11 +2,27 @@ A simple attempt at making a function like Mathematica's `manipulate` in Python
 to allow easy instantiation of GUI widgets for tweaking parameters and updating
 plots.
 
-The demo should be self-explanatory with
-
-`python manipulate_demo.py`
-
-![python manipulate](https://github.com/mattjj/py-manipulate/raw/master/1.png)
-![python manipulate](https://github.com/mattjj/py-manipulate/raw/master/2.png)
-
 Tested with Python 2.7.2, Matplotlib 1.0.1
+
+# Demo #
+Say we define a function like `sinc`:
+
+```python
+def sinc(x,A,f,z):
+    return A*np.sin(2*np.pi*f*x)/(x**z)
+```
+
+We can then plot the function using the `mplot` function in `manipulate`:
+
+```python
+from manipulate import mplot
+mplot(sinc,np.arange(0.01,1,0.01),A=(1,2),f=(1,5),z=(0,1))
+plt.xlabel('x')
+plt.title(u'A sin(2πf x)/x^z')
+```
+
+![python manipulate](http://www.mit.edu/~mattjj/github/py-manipulate/1.png)
+
+We can use the GUI sliders to see how parameter adjustments affect the function:
+
+![python manipulate](http://www.mit.edu/~mattjj/github/py-manipulate/2.png)
